@@ -589,20 +589,30 @@ img {
     background: var(--secondary-light);
     width: 90%;
     max-width: 900px;
+    max-height: 90vh;
     border-radius: 20px;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
     box-shadow: var(--shadow-deep);
 }
 
 .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
+    position: sticky;
+    top: 15px;
+    right: 15px;
+    float: right;
+    width: 35px;
+    height: 35px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
     color: var(--primary-root);
     cursor: pointer;
-    z-index: 10;
+    z-index: 100;
+    box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
 }
 
@@ -630,7 +640,7 @@ img {
 }
 
 .modal-info {
-    padding: 60px 40px;
+    padding: 40px 30px;
 }
 
 .modal-title {
@@ -693,7 +703,47 @@ img {
     }
 
     .modal-image {
-        padding: 40px 20px;
+        padding: 30px 20px;
+        min-height: 200px;
+    }
+
+    .modal-image img {
+        max-width: 180px;
+    }
+
+    .modal-info {
+        padding: 30px 20px;
+    }
+
+    .modal-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .detail-item {
+        gap: 15px;
+    }
+
+    .detail-item i {
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+
+    .detail-item p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        border-radius: 15px;
+    }
+    
+    .detail-item {
+        flex-direction: row;
+        align-items: center;
     }
 }
 

@@ -158,6 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('modal-event-date').innerText = lastEvent.time ? `${lastEvent.date} | ${lastEvent.time}` : lastEvent.date;
                         document.getElementById('modal-event-location').innerText = lastEvent.location;
                         document.getElementById('modal-event-desc').innerText = lastEvent.desc;
+                        if (lastEvent.image) {
+                            document.getElementById('modal-event-img').src = lastEvent.image;
+                        } else {
+                            document.getElementById('modal-event-img').src = 'assets/logo2.png';
+                        }
                         modal.style.display = 'flex';
                         document.body.style.overflow = 'hidden';
                     }
@@ -216,6 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('modal-event-date').innerText = selectedEvent.time ? `${selectedEvent.date} | ${selectedEvent.time}` : selectedEvent.date;
                         document.getElementById('modal-event-location').innerText = selectedEvent.location;
                         document.getElementById('modal-event-desc').innerText = selectedEvent.desc;
+                        if (selectedEvent.image) {
+                            document.getElementById('modal-event-img').src = selectedEvent.image;
+                        } else {
+                            document.getElementById('modal-event-img').src = 'assets/logo2.png';
+                        }
                         modal.style.display = 'flex';
                         document.body.style.overflow = 'hidden';
                     }

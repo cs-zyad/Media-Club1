@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن | نادي الإعلام والإنتاج السينمائي</title>
+    <meta name="description" content="تعرف على نادي الإعلام والإنتاج السينمائي، رؤيتنا، رسالتنا وأبرز إنجازاتنا.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-page-header {
+            background: linear-gradient(rgba(42, 9, 9, 0.85), rgba(42, 9, 9, 0.85)), url('https://images.unsplash.com/photo-1518116544971-ce4ddf82b7db?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            padding: 180px 0 100px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .about-story {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .about-story .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-text {
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .story-image img {
+            border-radius: 20px;
+            box-shadow: var(--shadow-deep);
+            border: 8px solid var(--secondary-light);
+            transition: var(--transition-smooth);
+        }
+
+        .story-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(188, 45, 41, 0.2);
+        }
+
+        .vision-mission {
+            padding: 80px 0;
+            background-color: var(--primary-dark);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .vm-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            background-color: var(--primary-main);
+            border-color: var(--primary-main);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-bottom-color: var(--white);
+        }
+
+        .vm-icon {
+            font-size: 3.5rem;
+            color: var(--secondary-accent);
+            margin-bottom: 20px;
+        }
+
+        .vm-card:hover .vm-icon {
+            color: var(--white);
+        }
+
+        .vm-title {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .vm-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        .achievements {
+            padding: 80px 0;
+            background-color: var(--primary-dark); /* Changed from primary-root to differentiate from footer */
+            color: var(--white);
+            position: relative;
+        }
+        
+        .achievements .section-title {
+            color: var(--secondary-accent);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .achievement-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .achievement-card:hover {
+            background-color: var(--primary-main);
+            transform: translateY(-10px);
+            border-color: var(--primary-main);
+        }
+
+        .achievement-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'Tajawal', sans-serif;
+            color: var(--secondary-accent);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .achievement-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .achievement-card:hover .achievement-number {
+            color: var(--white);
+        }
+
+        @media (max-width: 992px) {
+            .about-story .container, .vm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo2.png" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html" class="active">من نحن</a></li>
+                <li><a href="effectiveness.html">الفعاليات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="about-page-header reveal">
+        <div class="container">
+            <h1 class="section-title animate-up" style="color: var(--secondary-accent); font-size: 3.5rem;">عن النادي</h1>
+            <div class="title-underline center animate-up delay-1"></div>
+            <p class="animate-up delay-2" style="font-size: 1.3rem; max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                منصة طلابية إبداعية تهدف إلى بناء مجتمع ملهم من صناع المحتوى والمصورين والمخرجين، ونؤمن بأن لكل طالب مكانة في سرد الحكايات.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-story reveal">
+        <div class="container">
+            <div class="story-content">
+                <h2 class="section-title">حكايتنا</h2>
+                <div class="title-underline"></div>
+                <p class="story-text">
+                    تأسس نادي الإعلام والإنتاج السينمائي ليكون الحاضنة الأولى للمواهب الطلابية الشغوفة بعالم العدسات والشاشات. بدأنا كفكرة صغيرة بين مجموعة من الطلاب الحالمين، وتطورنا لنصبح واحداً من أنشط الأندية الطلابية في صناعة المحتوى البصري.
+                </p>
+                <p class="story-text">
+                    نحن نؤمن بأن كل إطار سينمائي يحمل رسالة، وكل صورة تروي ألف كلمة. لذلك، نضع بين يدي أعضائنا أحدث المعارف وأفضل الممارسات المهنية لترجمة أفكارهم إلى أعمال فنية احترافية تلهم المجتمع وتنافس في المهرجانات المحلية والدولية.
+                </p>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&q=80&w=1000" alt="نادي الإعلام">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission reveal">
+        <div class="container vm-grid">
+            <div class="vm-card">
+                <i class="fas fa-eye vm-icon"></i>
+                <h3 class="vm-title">رؤيتنا</h3>
+                <p class="vm-text">
+                    الريادة والتميز في الإنتاج السينمائي والمحتوى الإعلامي الطلابي على مستوى الجامعات، وخلق بيئة محفزة للابتكار تخرّج قامات إعلامية قادرة على إحداث تأثير إيجابي محلياً وعالمياً.
+                </p>
+            </div>
+            <div class="vm-card">
+                <i class="fas fa-bullseye vm-icon"></i>
+                <h3 class="vm-title">رسالتنا</h3>
+                <p class="vm-text">
+                    تمكين ودعم الكفاءات الشبابية وتزويدها بالمهارات التقنية والفنية العالية، من خلال ورش عمل احترافية، جلسات نقد سينمائي، ومشاريع إنتاجية مشتركة ترتقي بالذائقة الفنية.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="achievements reveal">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">إنجازاتنا</h2>
+                <div class="title-underline center" style="background-color: var(--secondary-accent);"></div>
+                <p style="opacity: 0.9; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">أرقام تفخر بها أسرة النادي، وتعكس حجم الجهد والشغف الذي نمتلكه.</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <span class="achievement-number">+50</span>
+                    <h4 class="achievement-title">فيلم قصير أُنتج</h4>
+                </div>
+                <div class="achievement-card">
+                    <span class="achievement-number">+120</span>
+                    <h4 class="achievement-title">ورشة عمل ودورة</h4>
+                </div>
+                <div class="achievement-card">
+                    <span class="achievement-number">+800</span>
+                    <h4 class="achievement-title">عضو ومستفيد</h4>
+                </div>
+                <div class="achievement-card">
+                    <span class="achievement-number">15</span>
+                    <h4 class="achievement-title">جائزة محلية</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="logo footer-logo">
+                    <img src="assets/logo2.png" alt="Logo" class="footer-logo-img">
+                </div>
+                <p class="footer-desc">نحن نسعى لخلق جيل إعلامي مبدع يواكب التطور السينمائي العالمي من قلب الجامعة.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="effectiveness.html">الفعاليات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact" id="contact">
+                <h3>تواصل معنا</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> media.club@university.edu.sa</li>
+                    <li><i class="fas fa-phone"></i> +966 12 345 6789</li>
+                    <li><i class="fas fa-map-pin"></i> عمادة شؤون الطلاب - الطابق الثاني</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>جميع الحقوق محفوظة <a href="login.html" style="color: inherit; text-decoration: none; cursor: default;">&copy;</a> 2026 نادي الإعلام والإنتاج السينمائي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

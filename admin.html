@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | نادي الإعلام والإنتاج السينمائي</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body style="background-color: var(--secondary-light);">
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container admin-nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo2.png" alt="Logo" class="logo-img" style="height: 50px;">
+                </a>
+            </div>
+            <div class="admin-title">
+                <i class="fas fa-shield-alt"></i> <span>الإدارة</span>
+            </div>
+            <div class="admin-user">
+                <span>مرحباً، المشرف العام</span>
+                <a href="index.html" class="btn btn-primary small"><i class="fas fa-sign-out-alt"></i> خروج</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Content -->
+    <section class="admin-content">
+        <div class="container">
+            <div class="admin-panel">
+                <div class="admin-panel-header">
+                    <h2 class="admin-panel-title">إضافة فعالية جديدة</h2>
+                    <span style="color: var(--primary-main); font-weight: bold;"><i class="fas fa-plus-circle"></i> ورشة / دورة / لقاء</span>
+                </div>
+
+                <form id="add-event-form">
+                    
+                    <div class="form-row">
+                        <div class="admin-form-group">
+                            <label for="event-title">عنوان الفعالية</label>
+                            <input type="text" id="event-title" class="admin-input" placeholder="مثال: ورشة صناعة الأفلام الوثائقية" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="event-type">نوع الفعالية</label>
+                            <select id="event-type" class="admin-input" required>
+                                <option value="">اختر النوع...</option>
+                                <option value="workshop">ورشة عمل</option>
+                                <option value="course">دورة تدريبية</option>
+                                <option value="meeting">لقاء مفتوح</option>
+                                <option value="screening">عرض سينمائي</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="admin-form-group">
+                            <label for="event-date">التاريخ</label>
+                            <input type="date" id="event-date" class="admin-input" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="event-time">الوقت</label>
+                            <input type="time" id="event-time" class="admin-input" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="event-location">المكان</label>
+                            <input type="text" id="event-location" class="admin-input" placeholder="مثال: القاعة الكبرى / عن بعد" required>
+                        </div>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="event-desc">وصف الفعالية</label>
+                        <textarea id="event-desc" class="admin-input" placeholder="اكتب نبذة تفصيلية عن محتوى الفعالية وما سيتعلمه الحضور..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="admin-form-group">
+                            <label for="event-image">صورة الفعالية / البوستر الإعلاني</label>
+                            <input type="file" id="event-image" class="admin-input" accept="image/*">
+                            <small style="color: #666; margin-top: 5px; display: block;">الحجم المفضل: 600x400 بكسل</small>
+                        </div>
+                        
+                        <!-- THE LINK FIELD -->
+                        <div class="admin-form-group">
+                            <label for="event-link" style="color: var(--primary-main);">رابط التسجيل (نموذج Google Form)</label>
+                            <input type="url" id="event-link" class="admin-input" placeholder="https://forms.gle/..." required style="border-color: var(--primary-main); background-color: rgba(188, 45, 41, 0.05);">
+                            <small style="color: var(--primary-main); margin-top: 5px; display: block;"><i class="fas fa-info-circle"></i> سيظهر هذا الرابط كزر للتسجيل في الفعالية.</small>
+                        </div>
+                    </div>
+
+                    <div class="admin-btn-group">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; font-size: 1.2rem;"><i class="fas fa-share-square"></i> نشر الفعالية</button>
+                        <button type="reset" class="btn btn-secondary-outline" style="border-color: var(--primary-deep); color: var(--primary-deep);"><i class="fas fa-times"></i> إلغاء</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="admin-panel" style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px; color: var(--primary-root);">الفعاليات الحالية <span style="font-size: 0.9rem; color: #777; font-weight: normal;">(للتعديل أو الحذف)</span></h3>
+                <div id="events-list">
+                    <!-- Events will be rendered here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentEditId = null;
+
+        document.addEventListener('DOMContentLoaded', renderAdminEvents);
+
+        function renderAdminEvents() {
+            const list = document.getElementById('events-list');
+            let events = JSON.parse(localStorage.getItem('club_events')) || [];
+            list.innerHTML = '';
+            
+            if(events.length === 0) {
+                list.innerHTML = '<p style="color: #777; text-align: center;">لا توجد فعاليات مضافة حالياً.</p>';
+                return;
+            }
+
+            events.forEach(event => {
+                const div = document.createElement('div');
+                div.style.cssText = 'background: #f9f9f9; padding: 15px; border-radius: 8px; border-right: 4px solid var(--primary-main); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;';
+                div.innerHTML = `
+                    <strong style="color: var(--primary-root);">${event.title} <span style="font-size: 0.8rem; color: #666; font-weight: normal; margin-right: 10px;">(${event.date} | ${event.time || ''})</span></strong>
+                    <div>
+                        <button type="button" class="btn small" onclick="editEvent(${event.id})" style="background: transparent; color: var(--primary-main); padding: 5px 10px;"><i class="fas fa-edit"></i> تعديل</button>
+                        <button type="button" class="btn small" onclick="deleteEvent(${event.id})" style="background: transparent; color: #e74c3c; padding: 5px 10px;"><i class="fas fa-trash"></i> حذف</button>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        document.getElementById('add-event-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const title = document.getElementById('event-title').value;
+            const typeSelect = document.getElementById('event-type');
+            const typeText = typeSelect.options[typeSelect.selectedIndex].text;
+            const typeValue = typeSelect.value;
+            const date = document.getElementById('event-date').value;
+            const time = document.getElementById('event-time').value;
+            const location = document.getElementById('event-location').value;
+            const desc = document.getElementById('event-desc').value;
+            const link = document.getElementById('event-link').value;
+            
+            const imageFile = document.getElementById('event-image').files[0];
+            let events = JSON.parse(localStorage.getItem('club_events')) || [];
+            
+            function saveEventData(imageBase64) {
+                if (currentEditId) {
+                    // Update existing
+                    const index = events.findIndex(ev => ev.id === currentEditId);
+                    if (index > -1) {
+                        const finalImage = imageBase64 ? imageBase64 : events[index].image; // keep old image if not uploading new one
+                        events[index] = { ...events[index], title, type: typeText, typeValue, date, time, location, desc, link, image: finalImage };
+                    }
+                    alert('تم حفظ التعديلات بنجاح!');
+                    currentEditId = null;
+                    document.querySelector('#add-event-form button[type="submit"]').innerHTML = '<i class="fas fa-share-square"></i> نشر الفعالية';
+                } else {
+                    // Add new
+                    const finalImage = imageBase64 || 'https://images.unsplash.com/photo-1594122230689-45899d9e6f69?auto=format&fit=crop&q=80&w=2000'; // Default placeholder
+                    const newEvent = { title, type: typeText, typeValue, date, time, location, desc, link, image: finalImage, id: Date.now() };
+                    events.push(newEvent);
+                    alert('تمت إضافة الفعالية بنجاح!');
+                }
+                
+                localStorage.setItem('club_events', JSON.stringify(events));
+                document.getElementById('add-event-form').reset();
+                renderAdminEvents();
+            }
+
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    saveEventData(event.target.result);
+                };
+                reader.readAsDataURL(imageFile);
+            } else {
+                saveEventData(null);
+            }
+        });
+
+        function deleteEvent(id) {
+            if(confirm('هل أنت متأكد من حذف هذه الفعالية؟')) {
+                let events = JSON.parse(localStorage.getItem('club_events')) || [];
+                events = events.filter(ev => ev.id !== id);
+                localStorage.setItem('club_events', JSON.stringify(events));
+                renderAdminEvents();
+            }
+        }
+
+        function editEvent(id) {
+            let events = JSON.parse(localStorage.getItem('club_events')) || [];
+            const event = events.find(ev => ev.id === id);
+            
+            if(event) {
+                document.getElementById('event-title').value = event.title;
+                document.getElementById('event-location').value = event.location;
+                document.getElementById('event-desc').value = event.desc;
+                document.getElementById('event-link').value = event.link;
+                
+                // Handle Date/Time (fallback for old events)
+                document.getElementById('event-date').value = event.date || '';
+                document.getElementById('event-time').value = event.time || '';
+                
+                // Handle Type
+                if(event.typeValue) {
+                    document.getElementById('event-type').value = event.typeValue;
+                } else {
+                    const opts = Array.from(document.getElementById('event-type').options);
+                    const matched = opts.find(o => o.text === event.type);
+                    if(matched) document.getElementById('event-type').value = matched.value;
+                }
+                
+                currentEditId = id;
+                document.querySelector('#add-event-form button[type="submit"]').innerHTML = '<i class="fas fa-edit"></i> تحديث الفعالية';
+                
+                // Scroll up smoothly to form
+                window.scrollTo({ top: document.querySelector('.admin-panel').offsetTop - 20, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

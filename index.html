@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي الإعلام والإنتاج السينمائي | Media & Film Production Club</title>
+    <meta name="description"
+        content="نادي الإعلام والإنتاج السينمائي - مساحة لصناعة المحتوى المرئي وتطوير المهارات الإعلامية وصقل المواهب الطلابية.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assets/logo2.png" alt="Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="effectiveness.html">الفعاليات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero reveal" id="hero"
+        style="background: linear-gradient(rgba(42, 9, 9, 0.7), rgba(42, 9, 9, 0.7)), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2059') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title animate-up">نصنع الإبداع… ونروي الحكاية بالصورة</h1>
+            <p class="hero-subtitle animate-up delay-1">مساحة لصناعة المحتوى المرئي وتطوير المهارات الإعلامية وصقل
+                المواهب الطلابية.</p>
+            <div class="hero-btns animate-up delay-2">
+                <a href="#events" class="btn btn-primary">استكشف الفعاليات</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="mouse"></div>
+            <span>اكتشف المزيد</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about reveal" id="about">
+        <div class="container grid-2">
+            <div class="about-content">
+                <h2 class="section-title">من نحن</h2>
+                <div class="title-underline"></div>
+                <p class="about-text">
+                    نادي الإعلام والإنتاج السينمائي هو منصة طلابية إبداعية تهدف إلى بناء مجتمع ملهم من صناع المحتوى
+                    والمصورين والمخرجين. نحن نؤمن بأن كل طالب يمتلك حكاية تستحق أن تروى، ونحن هنا لنمنحهم الأدوات
+                    والخبرات لتحويل أفكارهم إلى واقع مرئي احترافي.
+                </p>
+                <p class="about-text">
+                    تتركز رؤيتنا في التميز الإعلامي والريادة في الإنتاج السينمائي الطلابي، من خلال بيئة تعليمية محفزة
+                    تدعم الابتكار وتصقل المواهب للوصول إلى مستويات مهنية عالية.
+                </p>
+                <a href="about.html" class="btn btn-primary" style="margin-top: 20px;">اقرأ المزيد عنا</a>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="assets/about.png" alt="Team Media Club" class="about-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="goals reveal" id="goals">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">أهدافنا</h2>
+                <div class="title-underline center"></div>
+            </div>
+            <div class="goals-grid">
+                <!-- Goal 1 -->
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3>تطوير المهارات الإعلامية</h3>
+                    <p>تعزيز القدرات التقنية والفنية في مجالات التصوير، المونتاج، وكتابة السيناريو.</p>
+                </div>
+                <!-- Goal 2 -->
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>إنتاج أفلام قصيرة احترافية</h3>
+                    <p>العمل على مشاريع إنتاجية متكاملة تبرز إبداعات الطلاب وتنافس في المحافل المختلفة.</p>
+                </div>
+                <!-- Goal 3 -->
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>تنظيم ورش ودورات تدريبية</h3>
+                    <p>إقامة جلسات تعليمية مكثفة يقدمها خبراء في صناعة الإعلام والسينما.</p>
+                </div>
+                <!-- Goal 4 -->
+                <div class="goal-card">
+                    <div class="goal-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>دعم المواهب الطلابية</h3>
+                    <p>توفير الدعم اللازم للمواهب الصاعدة وإبراز أعمالهم أمام الجمهور والمجتمع الجامعي.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Event Section -->
+    <section class="featured-event reveal" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">آخر الفعاليات</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="event-card-large">
+                <div class="event-image-side">
+                    <img src="assets/logo.png" alt="Logo" class="event-logo-overlay">
+                    <img src="assets/f1.png" alt="Featured Event">
+                    <div class="event-category">ورشة عمل</div>
+                </div>
+                <div class="event-content-side">
+                    <div class="event-meta">
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> 15 مارس 2026</span>
+                        <span class="event-location"><i class="fas fa-map-marker-alt"></i> القاعة المركزية - المبنى
+                            الرئيسي</span>
+                    </div>
+                    <h3 class="event-title">أساسيات الإخراج السينمائي: من الفكرة إلى الشاشة</h3>
+                    <p class="event-description">انضم إلينا في رحلة مكثفة لاستكشاف عالم الإخراج، حيث سنتعلم كيفية تحويل
+                        السيناريو المكتوب إلى لوحات بصرية تنبض بالحياة.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-Xo.../viewform" target="_blank" class="btn btn-primary" style="margin-top: 15px; display: inline-block; width: fit-content;"><i class="fas fa-external-link-alt"></i> التسجيل عبر نموذج Google</a>
+                    <button class="btn btn-secondary-outline" id="open-event-details" style="margin-top: 10px; display: inline-block; width: fit-content; border-color: var(--primary-main); color: var(--primary-main);">عرض التفاصيل</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery reveal" id="gallery">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">معرض الإبداع</h2>
+                <div class="title-underline center"></div>
+                <p>لمحات من كواليس وإنتاجات أعضاء النادي</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1000" alt="Production">
+                    <div class="gallery-overlay">
+                        <h4>خلف الكواليس</h4>
+                        <p>تصوير الفيلم القصير "رحلة ضوء"</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1000" alt="Cinematography">
+                    <div class="gallery-overlay">
+                        <h4>الإضاءة السينمائية</h4>
+                        <p>ورشة عمل الإضاءة الدرامية</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&q=80&w=1000" alt="Editing">
+                    <div class="gallery-overlay">
+                        <h4>غرفة المونتاج</h4>
+                        <p>تجهيز الأعمال للعرض السنوي</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Modal -->
+    <div class="modal-overlay" id="event-modal">
+        <div class="modal-content animate-pop">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="assets/logo.png" alt="Logo" class="modal-logo">
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-title">تفاصيل الفعالية</h2>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-film"></i>
+                            <div>
+                                <h4>اسم الفعالية</h4>
+                                <p id="modal-event-title">أساسيات الإخراج السينمائي</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-day"></i>
+                            <div>
+                                <h4>التاريخ والوقت</h4>
+                                <p id="modal-event-date">15 مارس 2026 | 4:00 عصراً</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h4>المكان</h4>
+                                <p id="modal-event-location">مبنى كلية الإعلام - استوديو A</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <h4>عن الفعالية</h4>
+                                <p id="modal-event-desc">نسعى من خلال هذه الورشة إلى تمكين المبدعين من فهم أدوات المخرج الناجح، وكيفية بناء
+                                    المشهد السينمائي باحترافية عالية، مع محتوى تدريبي يواكب المعايير العالمية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="logo footer-logo">
+                    <img src="assets/logo2.png" alt="Logo" class="footer-logo-img">
+                </div>
+                <p class="footer-desc">نحن نسعى لخلق جيل إعلامي مبدع يواكب التطور السينمائي العالمي من قلب الجامعة.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="effectiveness.html">الفعاليات</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact" id="contact">
+                <h3>تواصل معنا</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> media.club@university.edu.sa</li>
+                    <li><i class="fas fa-phone"></i> +966 12 345 6789</li>
+                    <li><i class="fas fa-map-pin"></i> عمادة شؤون الطلاب - الطابق الثاني</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>جميع الحقوق محفوظة <a href="login.html" style="color: inherit; text-decoration: none; cursor: default;">&copy;</a> 2026 نادي الإعلام والإنتاج السينمائي</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

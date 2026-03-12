@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | نادي الإعلام والإنتاج السينمائي</title>
+    <meta name="description" content="قم بتسجيل الدخول لحسابك لمشاهدة دوراتك والمشاركة في الفعاليات.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Tajawal:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body class="auth-body">
+    <a href="index.html" class="back-home">
+        <i class="fas fa-arrow-right"></i>
+        العودة للرئيسية
+    </a>
+
+    <div class="auth-page">
+        <!-- Ambient background effects -->
+        <div class="ambient-circle circle-1"></div>
+        <div class="ambient-circle circle-2"></div>
+
+        <div class="auth-card">
+            <a href="index.html">
+                <img src="assets/logo2.png" alt="Logo" class="auth-logo">
+            </a>
+            
+            <h1 class="auth-title">مرحباً بعودتك</h1>
+            <p class="auth-desc">قم بتسجيل الدخول لمتابعة رحلتك في صناعة المحتوى.</p>
+
+            <form id="loginForm" class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <input type="email" id="login-email" class="form-input" placeholder="البريد الإلكتروني" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="login-password" class="form-input" placeholder="كلمة المرور" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                
+                <!-- Login Error Message (Hidden by default) -->
+                <div id="login-error" style="color: #ff6b6b; font-size: 0.9rem; margin-bottom: 15px; text-align: right; display: none;">
+                    * البريد الإلكتروني أو كلمة المرور غير صحيحة
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        تذكرني
+                    </label>
+                    <a href="forgot-password.html" class="auth-link">نسيت كلمة المرور؟</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-auth">تسجيل الدخول</button>
+                
+                <p class="auth-footer">
+                    ليس لديك حساب؟ <a href="register.html" class="auth-link">إنشاء حساب جديد</a>
+                </p>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <!-- Login Logic functionality -->
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent page refresh
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            
+            // Checking for the Admin Credentials
+            if (email === 'admin@mediaclub.com' && password === '123456') {
+                // Login successful for admin
+                window.location.href = 'admin.html';
+            } else if (password !== '123456') {
+                // You can add more accounts here. For now, we simulate a regular login if password is not matching admin.
+                // However, let's just log them in as regular users if they enter anything else just for the demo:
+                window.location.href = 'index.html'; 
+            }
+        }
+    </script>
+</body>
+</html>
